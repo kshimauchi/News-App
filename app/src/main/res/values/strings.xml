@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">News Application</string>
+    <string name="hint"></string>
+    <string name="display" formatted="true"> <font color="RED">"Click" on Search</font></string>
+    <string name="demo"><font color="BLUE">Search</font></string>
+    <string name="search_string">Search</string>
+</resources>
