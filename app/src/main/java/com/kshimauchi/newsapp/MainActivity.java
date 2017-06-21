@@ -17,8 +17,11 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     static final String TAG = "MainActivity";
+
     private ProgressBar progress;
+
     private EditText search;
+
     private TextView textView;
 
     @Override

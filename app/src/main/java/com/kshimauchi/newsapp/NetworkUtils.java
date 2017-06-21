@@ -32,7 +32,9 @@ public class NetworkUtils {
     final static String sortBy_value = "latest";
 
     final static String API_KEY="apiKey";
-    final static String api_value="44f7c25a59fc4280b594c6c32743cca1";
+
+    //Get your own key
+    final static String api_value="";
 
     final static String TAG = "NetworkUtils";
 
