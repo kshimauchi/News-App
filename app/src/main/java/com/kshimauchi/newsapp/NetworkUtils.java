@@ -110,14 +110,14 @@ public class NetworkUtils {
         JSONObject response = new JSONObject(json);
         //articles is an Array which is
         JSONArray articles = response.getJSONArray("articles");
-//        /**
-//         * @param author
-//         * @param title
-//         * @param description
-//         * @param url
-//         * @param urlToImage
-//         * @param publishedAt
-//         **/
+       /**
+         * @param author
+         * @param title
+         * @param description
+         * @param url
+         * @param urlToImage
+         * @param publishedAt
+        **/
         for(int i =0; i < articles.length(); i++){
             JSONObject article = articles.getJSONObject(i);
             String author = article.getString("author");
@@ -126,12 +126,12 @@ public class NetworkUtils {
             String url = article.getString("url");
             String urlToImage = article.getString("urlToImage");
             String publishedAt = article.getString("publishedAt");
-           Log.d(TAG, " parsing author " + author );
-            Log.d(TAG, "parsing title " + title );
-            Log.d(TAG, " description " + description);
-            Log.d(TAG, " url " + url);
-            Log.d(TAG, " url to image " + urlToImage);
-            Log.d(TAG, " publishedAT " + publishedAt );
+//           Log.d(TAG, " parsing author " + author );
+//            Log.d(TAG, "parsing title " + title );
+//            Log.d(TAG, " description " + description);
+//            Log.d(TAG, " url " + url);
+//            Log.d(TAG, " url to image " + urlToImage);
+//            Log.d(TAG, " publishedAT " + publishedAt );
            //Add the article to the Arraylist to create articles
             result.add(new NewsItem(author, title, description, url, urlToImage, publishedAt));
         }

@@ -4,13 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.kshimauchi.newsapp.Model.NewsItem;
-
 import java.util.ArrayList;
 
-import static com.kshimauchi.newsapp.R.id.author;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
     private ArrayList<NewsItem> data;
@@ -49,19 +47,34 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
     /**
      * ************************Inner Class: Item Holder  ****************************/
     class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView author;
+        TextView title;
+        TextView description;
+        TextView url;
+        //TextView urlToImage;
+        TextView publishedAt;
+
         //Constructor
         public ItemHolder(View itemView) {
             super(itemView);
+            author =(TextView)itemView.findViewById(R.id.author);
+            title=(TextView)itemView.findViewById(R.id.title);
+            description=(TextView)itemView.findViewById(R.id.description);
+            url = (TextView)itemView.findViewById((R.id.url));
+            //urlToImage = (TextView)itemView.findViewById(R.id.urlToImage);
+            publishedAt = (TextView)itemView.findViewById(R.id.publishedAt);
+           //reparing listener
+            itemView.setOnClickListener(this);
         }
-
+        /* more information here  binds the items to a textView defined in item.xml*/
         public void bind(int pos) {
             NewsItem item = data.get(pos);
-            author.setText(item.getAuthor());
-            /**/
-
-
-        /* more information here */
-
+           author.setText(item.getAuthor());
+            title.setText(item.getTitle());
+            description.setText((item.getDescription()));
+            url.setText(item.getUrl());
+           // urlToImage.setText(item.getUrlToImage());
+            publishedAt.setText(item.getPublishedAt());
         }
 
         @Override

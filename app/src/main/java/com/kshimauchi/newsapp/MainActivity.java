@@ -1,5 +1,7 @@
 package com.kshimauchi.newsapp;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,28 +25,22 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static android.util.Log.*;
+import static com.kshimauchi.newsapp.R.id.url;
+import static com.kshimauchi.newsapp.R.id.urlToImage;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity  {
     static final String TAG = "MainActivity";
-
     private ProgressBar progress;
-
     private EditText search;
-
     private TextView textView;
-
     private RecyclerView rv;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         progress = (ProgressBar) findViewById(R.id.progressBar);
+        //Not really being used here
         search = (EditText) findViewById(R.id.searchQuery);
         textView = (TextView) findViewById(R.id.displayJSON);
 
@@ -80,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     public class NetworkTask extends AsyncTask<URL, Void, ArrayList<NewsItem>>{
         String query;
 
@@ -90,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progress.setVisibility(View.INVISIBLE);
+            progress.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -122,13 +119,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(final ArrayList<NewsItem> data) {
             super.onPostExecute(data);
+            //hides the search view and the progressbar view after the inital search
+            search.setVisibility(View.GONE);
             progress.setVisibility(View.GONE);
 
             if(data != null){
                 NewsAdapter adapter = new NewsAdapter(data, new NewsAdapter.ItemClickListener() {
                     @Override
                     public void onItemClick(int clickedItemIndex){
-                        String url = data.get(clickedItemIndex).getUrl();
+                   String url = data.get(clickedItemIndex).getUrl();
+                    Intent browserIntent =
+                            new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                        startActivity(browserIntent);
                         Log.d(TAG, String.format("URL %S", url));
                     }
                 });
