@@ -5,16 +5,16 @@ import android.util.Log;
 
 import com.kshimauchi.newsapp.Model.NewsItem;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by kshim on 6/18/2017.
@@ -43,11 +43,11 @@ public class NetworkUtils {
     final static String API_KEY = "apiKey";
     //Get your own key
     final static String api_value = "44f7c25a59fc4280b594c6c32743cca1";
-
+    //44f7c25a59fc4280b594c6c32743cca1
     final static String TAG = "NetworkUtils url:";
 
     //method to build the URL using URI builder
-    public static URL buildURL() {
+    public static URL buildURL(String searchQuery) {
         Uri builtURi = Uri.parse(BASE_URL).buildUpon()
                 .appendQueryParameter(SOURCE, source_value)
                 .appendQueryParameter(SORT_BY, sortBy_value)

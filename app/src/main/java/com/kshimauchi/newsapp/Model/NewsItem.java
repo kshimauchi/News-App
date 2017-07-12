@@ -5,6 +5,7 @@ package com.kshimauchi.newsapp.Model;
  */
 
 public class NewsItem {
+
     private String author;
     private String title;
     private String description;
@@ -20,7 +21,6 @@ public class NewsItem {
         this.url = url;
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
-
     }
     public String getAuthor() {
         return author;

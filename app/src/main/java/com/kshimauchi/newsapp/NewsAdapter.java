@@ -7,12 +7,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kshimauchi.newsapp.Model.NewsItem;
+
 import java.util.ArrayList;
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
     private ArrayList<NewsItem> data;
     ItemClickListener listener;
+
 
     public NewsAdapter(ArrayList<NewsItem> data, ItemClickListener listener) {
         this.data = data;
@@ -45,7 +47,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
     }
 
     /**
-     * ************************Inner Class: Item Holder  ****************************/
+     * ************************Inner Class: ItemHolder  ****************************/
     class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView author;
         TextView title;
@@ -54,8 +56,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
         //TextView urlToImage;
         TextView publishedAt;
 
-        //Constructor
-        public ItemHolder(View itemView) {
+        //Constructor for the itemHolder
+        public ItemHolder(  View itemView   ) {
             super(itemView);
             author =(TextView)itemView.findViewById(R.id.author);
             title=(TextView)itemView.findViewById(R.id.title);
@@ -63,24 +65,31 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
             url = (TextView)itemView.findViewById((R.id.url));
             //urlToImage = (TextView)itemView.findViewById(R.id.urlToImage);
             publishedAt = (TextView)itemView.findViewById(R.id.publishedAt);
-           //reparing listener
+
             itemView.setOnClickListener(this);
         }
         /* more information here  binds the items to a textView defined in item.xml*/
         public void bind(int pos) {
             NewsItem item = data.get(pos);
-           author.setText(item.getAuthor());
-            title.setText(item.getTitle());
-            description.setText((item.getDescription()));
+
+            author.setText( item.getAuthor()    );
+
+            title.setText(  item.getTitle() );
+            description.setText((   item.getDescription()   ));
             url.setText(item.getUrl());
            // urlToImage.setText(item.getUrlToImage());
-            publishedAt.setText(item.getPublishedAt());
+            publishedAt.setText(    item.getPublishedAt()   );
         }
 
         @Override
         public void onClick(View v) {
             int pos = getAdapterPosition();
             listener.onItemClick(pos);
+        }
+        //
+        public void  setNewsData(ArrayList<NewsItem> newsData) {
+            data = newsData;
+            notifyDataSetChanged();
         }
     }
 }
