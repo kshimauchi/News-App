@@ -1,32 +1,40 @@
 package com.kshimauchi.newsapp;
+
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.kshimauchi.newsapp.Model.NewsItem;
-
-import java.util.ArrayList;
+import com.kshimauchi.newsapp.data.Contract;
+import com.squareup.picasso.Picasso;
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
-    private ArrayList<NewsItem> data;
+    //private ArrayList<NewsItem> data;
     ItemClickListener listener;
-
-
-    public NewsAdapter(ArrayList<NewsItem> data, ItemClickListener listener) {
-        this.data = data;
+    private Context context;
+    private Cursor cursor;
+    final static String TAG = "newsAdapter: ";
+//remove the ArrayList for the use of a Cursor to db scheme         ArrayList<NewsItem> data
+    public NewsAdapter(Context context,Cursor cursor, ItemClickListener listener) {
+        this.context = context;
+        this.cursor = cursor;
         this.listener = listener;
 
     }
     interface ItemClickListener {
-        void onItemClick(int clickedItemIndex);
+        //adds the cursor to the interface
+        void onItemClick(Cursor cursor, int clickedItemIndex);
     }
     @Override
     public NewsAdapter.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
+
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
         //Add to the layout
@@ -35,16 +43,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
 
         return holder;
     }
-
     @Override
-    public void onBindViewHolder(NewsAdapter.ItemHolder holder, int position) {
+    public void onBindViewHolder(ItemHolder holder, int position) {
         holder.bind(position);
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
-    }
+        return cursor.getCount();
+    }  //counts the rows
 
     /**
      * ************************Inner Class: ItemHolder  ****************************/
@@ -53,43 +60,58 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
         TextView title;
         TextView description;
         TextView url;
-        //TextView urlToImage;
+        TextView urlToImage;
+        //adding and image view for the urlToImage
+        ImageView img;
         TextView publishedAt;
 
-        //Constructor for the itemHolder
+        //Constructor for the itemHolder  :To the grader:  Why doesn't marks code for the ny.times doesn't  cast ?
         public ItemHolder(  View itemView   ) {
             super(itemView);
-            author =(TextView)itemView.findViewById(R.id.author);
-            title=(TextView)itemView.findViewById(R.id.title);
-            description=(TextView)itemView.findViewById(R.id.description);
-            url = (TextView)itemView.findViewById((R.id.url));
-            //urlToImage = (TextView)itemView.findViewById(R.id.urlToImage);
-            publishedAt = (TextView)itemView.findViewById(R.id.publishedAt);
+            author = itemView.findViewById(R.id.author);
+            title= itemView.findViewById(R.id.title);
+            description= itemView.findViewById(R.id.description);
+            url = itemView.findViewById((R.id.url));
+           urlToImage = itemView.findViewById(R.id.urlToImage);
+            img = itemView.findViewById(R.id.img);
+            publishedAt = itemView.findViewById(R.id.publishedAt);
 
             itemView.setOnClickListener(this);
         }
         /* more information here  binds the items to a textView defined in item.xml*/
         public void bind(int pos) {
-            NewsItem item = data.get(pos);
+            //NewsItem item = data.get(pos);
+            cursor.moveToPosition(pos);
 
-            author.setText( item.getAuthor()    );
+            author.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_AUTHOR)));
+            title.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_TITLE)));
+            description.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_DESCRIPTION)));
+            urlToImage.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_URL_TO_IMAGE)));
+            publishedAt.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_PUBLISHED_AT)));
+            url.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_URL)));
+            //dealing with the image with picasso  from database
+            String url = cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_URL_TO_IMAGE));
+            Log.d(TAG, "#######################  url " + url );
 
-            title.setText(  item.getTitle() );
-            description.setText((   item.getDescription()   ));
-            url.setText(item.getUrl());
-           // urlToImage.setText(item.getUrlToImage());
-            publishedAt.setText(    item.getPublishedAt()   );
+                     if(url != null){
+                         //gave me some issue with just using context:  so i called getcontext on the imageView to make sure
+                        Picasso.with(img.getContext()).load(url).into(img);
+                     }
         }
 
         @Override
         public void onClick(View v) {
-            int pos = getAdapterPosition();
-            listener.onItemClick(pos);
+                int pos = getAdapterPosition();
+                listener.onItemClick(cursor,pos);
         }
-        //
-        public void  setNewsData(ArrayList<NewsItem> newsData) {
-            data = newsData;
-            notifyDataSetChanged();
-        }
+        //removed below setNewsData  not really using the ArrayList here since we have a db
+      }
     }
-}
+/**
+ *                                          public void  setNewsData(ArrayList<NewsItem> newsData) {
+                                            data = newsData;
+                                            notifyDataSetChanged();
+                                            }
+ *
+ *
+ * **/

@@ -5,7 +5,6 @@ package com.kshimauchi.newsapp.Model;
  */
 
 public class NewsItem {
-
     private String author;
     private String title;
     private String description;
@@ -13,8 +12,7 @@ public class NewsItem {
     private String urlToImage;
     private String publishedAt;
 
-    public NewsItem(String author, String title, String description, String url, String urlToImage, String publishedAt)
-    {
+    public NewsItem(String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.author = author;
         this.title = title;
         this.description = description;
@@ -22,6 +20,7 @@ public class NewsItem {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
     }
+
     public String getAuthor() {
         return author;
     }
@@ -69,5 +68,4 @@ public class NewsItem {
     public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
     }
-
 }

@@ -43,11 +43,12 @@ public class NetworkUtils {
     final static String API_KEY = "apiKey";
     //Get your own key
     final static String api_value = "44f7c25a59fc4280b594c6c32743cca1";
-    //44f7c25a59fc4280b594c6c32743cca1
+    //                                                44f7c25a59fc4280b594c6c32743cca1
     final static String TAG = "NetworkUtils url:";
 
     //method to build the URL using URI builder
-    public static URL buildURL(String searchQuery) {
+    //removed the searchQuery parameter from the buildURL method        String searchQuery
+    public static URL buildURL() {
         Uri builtURi = Uri.parse(BASE_URL).buildUpon()
                 .appendQueryParameter(SOURCE, source_value)
                 .appendQueryParameter(SORT_BY, sortBy_value)
@@ -78,7 +79,6 @@ public class NetworkUtils {
             if(urlConn == null) Log.d(TAG, "urlConn null");
             InputStream in = urlConn.getInputStream();
 
-
             Scanner input = new Scanner(in);
 
             input.useDelimiter("\\A");
@@ -102,8 +102,6 @@ public class NetworkUtils {
     }
     //parsing a string and returning an arraylist of type NewsItem
    public static ArrayList<NewsItem> parseJSON(String json) throws JSONException{
-
-
        //Collections Holder
         ArrayList<NewsItem> result= new ArrayList<>();
         //JSON object passing json is a String
@@ -126,18 +124,18 @@ public class NetworkUtils {
             String url = article.getString("url");
             String urlToImage = article.getString("urlToImage");
             String publishedAt = article.getString("publishedAt");
-//           Log.d(TAG, " parsing author " + author );
-//            Log.d(TAG, "parsing title " + title );
-//            Log.d(TAG, " description " + description);
-//            Log.d(TAG, " url " + url);
-//            Log.d(TAG, " url to image " + urlToImage);
-//            Log.d(TAG, " publishedAT " + publishedAt );
+           Log.d(TAG, " parsing author " + author );
+            Log.d(TAG, "parsing title " + title );
+            Log.d(TAG, " description " + description);
+            Log.d(TAG, " url " + url);
+            Log.d(TAG, " url to image " + urlToImage);
+            Log.d(TAG, " publishedAT " + publishedAt );
+            Log.d(TAG, "\n");
            //Add the article to the Arraylist to create articles
             result.add(new NewsItem(author, title, description, url, urlToImage, publishedAt));
         }
         return result;
-
-
 }
 
 }//End of NetworkUtils
+//how to safely parse the image
