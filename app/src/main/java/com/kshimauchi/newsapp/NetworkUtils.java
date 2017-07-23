@@ -1,5 +1,6 @@
 package com.kshimauchi.newsapp;
-
+// for nytimes api-key:     354968bf26be4ebea9cda2a00d974e90
+//for newsapp api-key:
 import android.net.Uri;
 import android.util.Log;
 
@@ -17,42 +18,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by kshim on 6/18/2017.
+ * Created by kshim on 6/18/2017.  <p>modified 7/21 rebuilding the url for another api</p>
  */
-
+//the url for the ny times is https://api.nytimes.com/svc/mostpopular/v2/mostviewed/U.S./30.json"
 public class NetworkUtils {
-    /**
-     * Create a url using uri builder
-     * https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=44f7c25a59fc4280b594c6c32743cca1
-     * <p>
-     * source=the-next-web (required)
-     * <p>
-     * sortBy= latest, for additional information see newsapi.org (sortBy is optional: Top, latest, ...and some others)
-     * <p>
-     * apiKey = 44f7c25a59fc4280b594c6c32743cca1 (required)
-     * *
-     */
-    final static String BASE_URL = "http://newsapi.org/V1/articles";
-
-    final static String SOURCE = "source";
-    final static String source_value = "the-next-web";
-
-    final static String SORT_BY = "sortBy";
-    final static String sortBy_value = "latest";
-
-    final static String API_KEY = "apiKey";
-    //Get your own key
-    final static String api_value = "44f7c25a59fc4280b594c6c32743cca1";
-    //44f7c25a59fc4280b594c6c32743cca1
-    final static String TAG = "NetworkUtils url:";
+public static final String TAG="NetworkUtils";
+    public static final String BASE_URL ="https://api.nytimes.com/svc/mostpopular/v2/mostviewed/U.S./30.json";
+    public static final String PARAM_QUERY = "q";
+    public static final String PARAM_API_KEY = "api-key";
 
     //method to build the URL using URI builder
-    public static URL buildURL(String searchQuery) {
+    public static URL buildURL() {
         Uri builtURi = Uri.parse(BASE_URL).buildUpon()
-                .appendQueryParameter(SOURCE, source_value)
-                .appendQueryParameter(SORT_BY, sortBy_value)
-                .appendQueryParameter(API_KEY, api_value)
-                .build();
+                //this api is registered to me so go find your own
+                .appendQueryParameter(PARAM_API_KEY, "a1b462f40fff4aada162b5113341c760").build();
+        //a1b462f40fff4aada162b5113341c760 for nytimes
+        //44f7c25a59fc4280b594c6c32743cca1 newsapi
         URL url = null;
         try {
             String urlString = builtURi.toString();
@@ -95,45 +76,48 @@ public class NetworkUtils {
             e.printStackTrace();
             Log.e(TAG, e.getMessage());
         } finally {
-            //disconnect
+            //disconnect or close
             urlConn.disconnect();
         }
         return null;
     }
     //parsing a string and returning an arraylist of type NewsItem
    public static ArrayList<NewsItem> parseJSON(String json) throws JSONException{
-
-
        //Collections Holder
         ArrayList<NewsItem> result= new ArrayList<>();
         //JSON object passing json is a String
-        JSONObject response = new JSONObject(json);
-        //articles is an Array which is
-        JSONArray articles = response.getJSONArray("articles");
+        JSONObject main = new JSONObject(json);
+        //articles is an
+        JSONArray items = main.getJSONArray("results");
+       //String representation for the imageURL
+       String imageURL = null;
        /**
-         * @param author
          * @param title
-         * @param description
+         * @param published_date:
+         * @param abstract:
          * @param url
-         * @param urlToImage
-         * @param publishedAt
+         * There are more see www.nytimes.com/svc/mostpopular/v2/mostviewed/U.S./30.json
         **/
-        for(int i =0; i < articles.length(); i++){
-            JSONObject article = articles.getJSONObject(i);
-            String author = article.getString("author");
-            String title = article.getString("title");
-            String description = article.getString("description");
-            String url = article.getString("url");
-            String urlToImage = article.getString("urlToImage");
-            String publishedAt = article.getString("publishedAt");
-//           Log.d(TAG, " parsing author " + author );
-//            Log.d(TAG, "parsing title " + title );
-//            Log.d(TAG, " description " + description);
-//            Log.d(TAG, " url " + url);
-//            Log.d(TAG, " url to image " + urlToImage);
-//            Log.d(TAG, " publishedAT " + publishedAt );
-           //Add the article to the Arraylist to create articles
-            result.add(new NewsItem(author, title, description, url, urlToImage, publishedAt));
+        for(int i =0; i < items.length(); i++){
+            JSONObject item = items.getJSONObject(i);
+            //we need to create a new item
+            String title = item.getString("title");
+            String published_date = item.getString("published_date");
+            String abstractKeyword = item.getString("abstract");
+            String url = item.getString("url");
+            //returns the value mapped by name if it exists and is a JSONArray or null otherwise
+            JSONArray mediaObjects = item.optJSONArray("media");
+
+            //checks the case when optJsonArray method returns null if it is not null then there is data
+            //that data has several fields "type":"image":"subtype":"photo":caption and more
+            if (mediaObjects != null){
+                JSONObject image = mediaObjects.getJSONObject(0);  //gets the type of object which is of type image
+                JSONArray metaData = image.getJSONArray("media-metadata"); //gets properties associated with the image
+                JSONObject pictureMetaData = metaData.getJSONObject(0);
+                imageURL = pictureMetaData.getString("url");
+            }
+            //have to adjust my plain old java object to create the item of interest
+            result.add(new NewsItem(title, published_date,abstractKeyword,imageURL, url));
         }
         return result;
 
@@ -141,3 +125,29 @@ public class NetworkUtils {
 }
 
 }//End of NetworkUtils
+/**
+ * Create a url using uri builder
+ * https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=44f7c25a59fc4280b594c6c32743cca1
+ * <p>
+ * source=the-next-web (required)
+ * <p>
+ * sortBy= latest, for additional information see newsapi.org (sortBy is optional: Top, latest, ...and some others)
+ * <p>
+ * apiKey = 44f7c25a59fc4280b594c6c32743cca1 (required)
+ * *
+
+ final static String BASE_URL = "http://newsapi.org/V1/articles";
+
+ final static String SOURCE = "source";
+ final static String source_value = "the-next-web";
+
+ final static String SORT_BY = "sortBy";
+ final static String sortBy_value = "latest";
+
+ final static String API_KEY = "apiKey";
+ //Get your own key
+ final static String api_value = "44f7c25a59fc4280b594c6c32743cca1";
+ //44f7c25a59fc4280b594c6c32743cca1
+ final static String TAG = "NetworkUtils url:";
+ */
+/**  ***/

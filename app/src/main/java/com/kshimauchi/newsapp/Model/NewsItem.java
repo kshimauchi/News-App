@@ -3,31 +3,23 @@ package com.kshimauchi.newsapp.Model;
 /**
  * Created by kshim on 6/27/2017.
  */
-
+//This has been converted to make a decent object for the data at the given url
 public class NewsItem {
 
-    private String author;
+
     private String title;
-    private String description;
-    private String url;
-    private String urlToImage;
-    private String publishedAt;
-
-    public NewsItem(String author, String title, String description, String url, String urlToImage, String publishedAt)
+    private String abstractKeyword;
+    private String imageURL;
+    private String published_date;
+    private String Url;
+    //adx_keywords unused
+    public NewsItem(String title, String published_date, String abstractKeyword,String imageURL,String Url)
     {
-        this.author = author;
         this.title = title;
-        this.description = description;
-        this.url = url;
-        this.urlToImage = urlToImage;
-        this.publishedAt = publishedAt;
-    }
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+        this.published_date = published_date;
+        this.abstractKeyword = abstractKeyword;
+        this.imageURL = imageURL;
+        this.Url = Url;
     }
 
     public String getTitle() {
@@ -38,36 +30,35 @@ public class NewsItem {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAbstractKeyword() {
+        return abstractKeyword;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAbstractKeyword(String abstractKeyword) {
+        this.abstractKeyword = abstractKeyword;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public String getPublished_date() {
+        return published_date;
+    }
+
+    public void setPublished_date(String published_date) {
+        this.published_date = published_date;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getUrl() {
-        return url;
+        return Url;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        Url = url;
     }
-
-    public String getUrlToImage() {
-        return urlToImage;
-    }
-
-    public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
-    }
-
-    public String getPublishedAt() {
-        return publishedAt;
-    }
-
-    public void setPublishedAt(String publishedAt) {
-        this.publishedAt = publishedAt;
-    }
-
 }
