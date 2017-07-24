@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">News Application for NYC</string>
-<!-- No need to have search field-->
-        <string name="refresh">Refresh</string>
-</resources>
