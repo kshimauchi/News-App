@@ -5,5 +5,11 @@
         android:id="@+id/search"
         android:orderInCategory="1"
         android:title="@string/refresh"
+<<<<<<< HEAD
         app:showAsAction="always"/>
+=======
+        app:showAsAction="always"
+        />
+    <!-- changed the names of search_string to refresh -->
+>>>>>>> fad2abdfbf6e52983a33e663b477a4f42d5d9364
 </menu>

@@ -1,0 +1,121 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:2:1-30:12
+	package
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:6:5-28:19
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\46fd6b72fd0d04f2120c16bc390a5589f8472722\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\cbfc97d870d50fe25a713bffd174fa4233a668ef\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\kshim\.android\build-cache\0b4ef69af39eeabb583c939148bdd9c603c700fb\output\AndroidManifest.xml:9:5-20
+MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:26:5-40:19
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\426d2a917ea9bf15b8143a8d458502a6516a5dd7\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\72677650080113143c38d8c76e244b57ae88742c\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\00c513f66f622c49af4f53508246c848efd92966\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\6608d397dca25ccdbeca5271c572ec055d35277d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\04fcb51442331f5c21d19b9475a5fc4c27f36375\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\7cdfea6f639494d18905cdac77a5ec7639ebf614\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:9:9-41
+	android:supportsRtl
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:11:9-35
+	android:roundIcon
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:10:9-54
+	android:allowBackup
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:7:9-35
+	android:icon
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:8:9-43
+	android:theme
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:12:9-40
+activity#com.kshimauchi.newsapp.MainActivity
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:14:9-22:20
+	android:launchMode
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:16:13-48
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:15:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:20:27-74
+service#com.kshimauchi.newsapp.NewsJob
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:24:9-27:19
+	android:exported
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:24:18-41
+action#com.firebase.jobdispatcher.ACTION_EXECUTE
+ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:26:13-79
+	android:name
+		ADDED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml:26:21-77
+uses-sdk
+INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\46fd6b72fd0d04f2120c16bc390a5589f8472722\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\cbfc97d870d50fe25a713bffd174fa4233a668ef\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\kshim\.android\build-cache\0b4ef69af39eeabb583c939148bdd9c603c700fb\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\ec218ae20e198210d8a9b64e3b3545336c7a6f49\output\AndroidManifest.xml:20:5-44
+MERGED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\426d2a917ea9bf15b8143a8d458502a6516a5dd7\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\72677650080113143c38d8c76e244b57ae88742c\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\00c513f66f622c49af4f53508246c848efd92966\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\6608d397dca25ccdbeca5271c572ec055d35277d\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\04fcb51442331f5c21d19b9475a5fc4c27f36375\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\7cdfea6f639494d18905cdac77a5ec7639ebf614\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Computer Science\Android Projects\Android_NewsApp\Android_New\News-App\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\46fd6b72fd0d04f2120c16bc390a5589f8472722\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\cbfc97d870d50fe25a713bffd174fa4233a668ef\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\ec218ae20e198210d8a9b64e3b3545336c7a6f49\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\426d2a917ea9bf15b8143a8d458502a6516a5dd7\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\72677650080113143c38d8c76e244b57ae88742c\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\00c513f66f622c49af4f53508246c848efd92966\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\6608d397dca25ccdbeca5271c572ec055d35277d\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\04fcb51442331f5c21d19b9475a5fc4c27f36375\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\7cdfea6f639494d18905cdac77a5ec7639ebf614\output\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\kshim\.android\build-cache\a74efc9303ba887208dd9598bb38dec3cf0bd089\output\AndroidManifest.xml:26:9-47
+service#com.firebase.jobdispatcher.GooglePlayReceiver
+ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:32:9-39:19
+	android:exported
+		ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:34:13-36
+	android:permission
+		ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:35:13-93
+	android:name
+		ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:33:13-73
+intent-filter#com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:36:13-38:29
+action#com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:37:17-87
+	android:name
+		ADDED from [com.firebase:firebase-jobdispatcher:0.5.2] C:\Users\kshim\.android\build-cache\0231a0fd121b13f545b0bf3f53cd48d2f9c48afe\output\AndroidManifest.xml:37:25-84

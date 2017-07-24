@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\kshim\\.android\\build-cache\\a74efc9303ba887208dd9598bb38dec3cf0bd089\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "D:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\kshim\\.android\\build-cache\\a74efc9303ba887208dd9598bb38dec3cf0bd089\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\kshim\\.android\\build-cache\\a74efc9303ba887208dd9598bb38dec3cf0bd089\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\kshim\\.android\\build-cache\\a74efc9303ba887208dd9598bb38dec3cf0bd089\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

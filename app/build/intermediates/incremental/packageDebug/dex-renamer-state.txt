@@ -1,0 +1,7 @@
+#Sun Jul 23 17:12:27 PDT 2017
+base.0=D\:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4ace5802383e6a1832b1068fc0623cf4e90d8bbd
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_75c41cf8061f64b12fb956ab323f59dc2884a8f3\\classes.dex
+base.1=D\:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_75c41cf8061f64b12fb956ab323f59dc2884a8f3
+file.0=D\:\\Computer Science\\Android Projects\\Android_NewsApp\\Android_New\\News-App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4ace5802383e6a1832b1068fc0623cf4e90d8bbd\\classes.dex

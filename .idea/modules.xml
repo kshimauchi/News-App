@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/News-App.iml" filepath="$PROJECT_DIR$/News-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_New.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_New.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" />
+>>>>>>> fad2abdfbf6e52983a33e663b477a4f42d5d9364
     </modules>
   </component>
 </project>
