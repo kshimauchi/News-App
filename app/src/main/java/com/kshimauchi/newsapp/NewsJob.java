@@ -21,7 +21,8 @@ public class NewsJob extends JobService{
         mBackgroundTask = new AsyncTask() {
             @Override
             protected void onPreExecute() {
-                Toast.makeText(NewsJob.this, "News refreshed", Toast.LENGTH_SHORT).show();
+                //Does a toast for the Refresh Task per minutes
+                Toast.makeText(NewsJob.this, "Articles Refreshed", Toast.LENGTH_SHORT).show();
                 super.onPreExecute();
             }
 
@@ -29,7 +30,7 @@ public class NewsJob extends JobService{
             protected Object doInBackground(Object[] params) {
                 try {
                     RefreshTasks.refreshArticles(NewsJob.this);
-                    Log.d( TAG, "RefreshTask "   );
+                    Log.d( TAG, "Articles Refreshed"   );
                 } catch (IOException e) {
                     Log.d(TAG, "exception with refreshTask probably parsing error ");
                     e.printStackTrace();

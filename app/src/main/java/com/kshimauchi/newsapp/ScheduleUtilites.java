@@ -23,7 +23,7 @@ public class ScheduleUtilites  {
     private static final int  SCHEDULE_INTERVAL_MINUTES =1;
     private static final int SCHEDULE_INTERVAL_SECONDS =(int) TimeUnit.MINUTES.toSeconds(SCHEDULE_INTERVAL_MINUTES);
     private static final int SYNC_FLEXTIME_SECONDS = SCHEDULE_INTERVAL_SECONDS;
-    private static final String NEWS_JOB_TAG = "news_job_tag";
+    private static final String NEWS_JOB_TAG = "ScheduleUtilities class #";
     private static boolean sInitialized;
 
     synchronized  public static void scheduleRefresh(@NonNull final Context context)

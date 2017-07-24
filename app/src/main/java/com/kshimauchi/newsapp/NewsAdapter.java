@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kshimauchi.newsapp.data.Contract;
-import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Picasso;  //picasso library
+//Picasso Lib:  is a self explanatory package that can in some instances allow for rapid image processing to Android Views
+
 
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {

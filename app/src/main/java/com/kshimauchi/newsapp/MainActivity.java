@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //check this
+
         setContentView(R.layout.activity_main);
 
         progress = (ProgressBar) findViewById(R.id.progressBar);
@@ -81,14 +81,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
          }
         return true;
     }
-
-
     @Override
     public Loader<Void> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<Void>(this) {
             @Override
             public Void loadInBackground() {
-     //           RefreshTask.refreshArticle(MainActivity.this);
+              //RefreshTasks.refreshArticles(MainActivity.this);
                 return null;
             }
         };
